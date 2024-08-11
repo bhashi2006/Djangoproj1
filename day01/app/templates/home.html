@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1F1F1F;
+            color: #E0E0E0;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #1F1F1F;
+            color: #E0E0E0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding-top: 20px;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #E0E0E0;
+            display: block;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #333;
+            color: #FFF;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+            flex-grow: 1;
+            background-color: #1F1F1F;
+            color: #E0E0E0;
+        }
+
+        .main-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            color: #E0E0E0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1F1F1F;
+            color: #E0E0E0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 250px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            footer {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Project Shop Dashboard</h1>
+    </header>
+
+    <div class="sidebar">
+        <a target="_blank" href="{% url 'home' %}">Home</a>
+        <a target="_blank" href="{% url 'categories' %}">Categories</a>
+        <a target="_blank" href="{% url 'orders' %}">Orders</a>
+        <a target="_blank" href="{% url 'items' %}">Items</a>
+        <a target="_blank" href="{% url 'employees' %}">Employees</a>
+        <a target="_blank" href="{% url 'suppliers' %}">Suppliers</a>
+        <a target="_blank" href="{% url 'units' %}">Units</a>
+    </div>
+
+    <div class="main-content">
+        <h2>Welcome to the Dashboard</h2>
+        <div class="card">
+            <h3>Overview</h3>
+            <p>This project is focused on creating an Inventory and Order Management System specifically designed for a Konbini store.  </p>
+        </div>
+
+        <div class="card">
+            <h3>Project Creater</h3>
+            <p>UOG0623009 D.M.Inesh Bhashithya</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 MY DJANGO PROJECT</p>
+    </footer>
+
+</body>
+
+</html>
